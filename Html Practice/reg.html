@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>data validation</title>
+  <script>
+  function validate(){
+	  var atpos=document.registration.email.value.indexOf("@");
+	  var dotpos=document.registration.email.value.lastIndexOf(".");
+
+	  var allOK=true;
+
+	  if(document.registration.uname.value=="")
+	  {
+		  alert("Name must notbe blank");
+		  document.registration.uname.focus();
+		  allOK=false;
+	  }
+
+	  else if(document.registration.email.value=="")
+	  {
+		  alert("Email must not be blank");
+		  document.registration.email.focus();
+		  allOK=false;
+		  }
+		  else if(atpos<1 ||(dotpos-atpos)<2)
+		  {
+			  alert("Enter a valid Email");
+			  document.registration.email.focus();
+			  allOK=false;
+			  }
+			  else if(document.registration.uid.value=="")
+			  {
+		  alert("Id must notbe blank");
+		  document.registration.uid.focus();
+		  allOK=false;
+	  }
+	  else if((document.registration.pwd.value=="") ||(document.registration.pwd.value.length<8))
+	  {
+		  alert("Password must notbe blank & must be minimum 8 charactaers");
+		  document.registration.pwd.focus();
+		  allOK=false;
+	  }
+	  return allOK;
+  }
+ </script>
+ </head>
+ <body>
+ <form name="registration" action="xyz.jsp" method="post"><br>
+ Name: <input type="text" id="uname" name="uname" size="30" /><br><br>
+ Email: <input type="text" name="email" size="20" /><br><br>
+ Uid: <input type="text" name="uid" size="10" /><br><br>
+ Password: <input type="password" name="pwd" size="10" /><br><br>
+ <input type="submit" value="submit" onclick="return validate();" />
+  </form>
+  <form action= "" method="">
+comments : <br>
+<textarea rows = "30" cls ="40" ></textarea><br>
+<input type = "submit" value ="submit">
+</form>
+ </body>
+</html>
