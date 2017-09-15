@@ -50,12 +50,24 @@ function addvalue(num,str){   // use of function and passing variable into the f
   //   document.write("&nbsp &nbsp&nbsp&nbsp USE OF IF ELSE STATEMENT");
   //   document.write("<br>");
     document.write("<br>");
-    var food= "apple";
+    // document.write("use of conditional if STATEMENT");
+    var food= "almond";
     if(food=="apple"){
       document.write("Its good for health");
       alert("Its good for health");
         }
+    else if (food=="meat") {
+      document.write("its meat")
+    }
+    else if (food=="almond") {
+      document.write("its ALMONDS")
+    }
     else{
       document.write("its not apple");
       alert("Its not apple");
+    }
+    var i=2;
+    while (i<5) {
+      document.write("The new while block");
+      i++;
     }
